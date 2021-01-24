@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  fava:
+    build:
+      context: ./fava
+      args:
+        port: 5000
+    network_mode: "host"
+    volumes:
+      - type: bind
+        source: ./fava
+        target: /fava/
+    command: ["/fava/ledger.beancount"]
