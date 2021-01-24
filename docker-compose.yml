@@ -12,3 +12,14 @@ services:
         source: ./fava
         target: /fava/
     command: ["/fava/ledger.beancount"]
+
+  home-assistant:
+    init: true
+    image: homeassistant/home-assistant:stable
+    network_mode: "host"
+    environment:
+      TZ: "Europe/Rome"
+    volumes:
+      - type: bind
+        source: ./home-assistant
+        target: /config
