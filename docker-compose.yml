@@ -33,6 +33,7 @@ services:
       - TZ=Europe/London
     volumes:
       - ./code-config:/config
+      - /home:/home
     ports:
       - 8443:8443
     restart: unless-stopped
