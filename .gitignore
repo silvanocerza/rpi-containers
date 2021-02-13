@@ -1,1 +1,6 @@
-root-password
+mariadb-config/**
+fleet-config/**
+code-config/**
+
+fava/**
+!fava/Dockerfile
