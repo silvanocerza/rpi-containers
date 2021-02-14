@@ -5,11 +5,10 @@ services:
     container_name: fava
     build:
       context: ./fava
-      args:
-        port: 5000
-    network_mode: "host"
     volumes:
       - ./fava:/fava/
+    ports:
+      - 5000:5000
     command: ["/fava/ledger.beancount"]
     restart: unless-stopped
 
