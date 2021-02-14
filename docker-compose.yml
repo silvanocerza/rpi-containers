@@ -16,11 +16,12 @@ services:
     container_name: home-assistant
     init: true
     image: homeassistant/home-assistant:stable
-    network_mode: "host"
     environment:
       TZ: "Europe/Rome"
     volumes:
       - ./home-assistant:/config
+    ports:
+      - 8123:8123
     restart: unless-stopped
 
   code-server:
